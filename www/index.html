@@ -13,7 +13,7 @@
 
     // device APIs are available
     
-    var lat;
+    var lat='';
     //
     function onDeviceReady() {
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
@@ -58,8 +58,8 @@
         if(buttonIndex==1)
         {
             //alert('You selected button ' + buttonIndex);
-            
-           navigator.notification.alert(lat, callback,' Latitude', 'OK');
+          alert(lat);
+           //navigator.notification.alert(lat, callback,' Latitude', 'OK');
               
 
         }
