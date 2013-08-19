@@ -43,14 +43,22 @@
 
     // process the confirmation dialog result
     function onConfirm(buttonIndex) {
-        alert('You selected button ' + buttonIndex);
+        
+        if(buttonIndex==1)
+        {
+          alert('Latitude :' + position.coords.latitude);
+        }
+        else if(buttonIndex==2)
+        {
+          alert('Longitude :' + position.coords.longitude);
+        }
     }
 
     // Show a custom confirmation dialog
     //
     function showConfirm() {
         navigator.notification.confirm(
-            'Select', // message
+            'GeoLocation', // message
              onConfirm,            // callback to invoke with index of button pressed
             'Select GeoLocation',           // title
             'Latitude,Longitude'         // buttonLabels
