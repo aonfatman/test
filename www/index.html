@@ -20,6 +20,7 @@
     // onSuccess Geolocation
     //
     function onSuccess(position,buttonIndex) {
+      
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
@@ -28,7 +29,7 @@
                             'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
                             'Heading: '            + position.coords.heading               + '<br />' +
                             'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          + position.timestamp                    + '<br />'
+                            'Timestamp: '          + position.timestamp                    + '<br />' +
                             'position: '           + position                              + '<br />' +
                             'buttonIndex: '        + buttonIndex                           + '<br />';
         
@@ -53,7 +54,9 @@
         if(buttonIndex==1)
         {
             //alert('You selected button ' + buttonIndex);
-              alert('Latitude :' + position.coords.latitude);
+            
+           navigator.notification.alert('message', onError,' [title]', '[buttonName]');
+              
 
         }
         else
@@ -71,7 +74,7 @@
     function showConfirm() {
         navigator.notification.confirm(
             'GeoLocation', // message
-             onSuccess,            // callback to invoke with index of button pressed
+             onConfirm,            // callback to invoke with index of button pressed
             'Select GeoLocation',           // title
             'Latitude,Longitude'         // buttonLabels
         );
