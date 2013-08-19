@@ -58,8 +58,7 @@
         if(buttonIndex==1)
         {
             //alert('You selected button ' + buttonIndex);
-          alert(lat);
-           //navigator.notification.alert(lat, callback,' Latitude', 'OK');
+            navigator.notification.alert(lat, callback,' Latitude', 'OK');
               
 
         }
@@ -72,7 +71,7 @@
         }
         
     }
-    function callback() {}
+    function callback() { var x = '';}
 
     // Show a custom confirmation dialog
     //
