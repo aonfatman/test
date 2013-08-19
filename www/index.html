@@ -38,11 +38,12 @@
               'message: ' + error.message + '\n');
     }
 
-
-    navigator.notification.alert("Hello", alertCallback, [Dukdui], [OK])
-    function alertCallback(){
-      
-    }
+    $(document).ready(function(){
+      navigator.notification.alert("Hello", alertCallback, [Dukdui], [OK])
+      function alertCallback(){
+        
+      }
+    });
     </script>
   </head>
   <body>
