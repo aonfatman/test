@@ -44,13 +44,17 @@
     // process the confirmation dialog result
     function onConfirm(buttonIndex) {
         
-        if(buttonIndex==1)
+        if(buttonIndex=="1")
         {
-          alert('Latitude :' + position.coords.latitude);
+            function onSuccess(position) {
+              alert('Latitude :' + position.coords.latitude);
+            }
         }
-        else if(buttonIndex==2)
-        {
-          alert('Longitude :' + position.coords.longitude);
+        else
+        { 
+             function onSuccess(position) {
+              alert('Longitude :' + position.coords.longitude);
+             }
         }
     }
 
