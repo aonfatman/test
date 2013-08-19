@@ -31,6 +31,9 @@
                             'Timestamp: '          + position.timestamp                    + '<br />'
                             'position: '           + position                              + '<br />' +
                             'buttonIndex: '        + buttonIndex                           + '<br />';
+        
+        alert('Latitude :' + position.coords.latitude);
+
     }
 
     // onError Callback receives a PositionError object
@@ -68,7 +71,7 @@
     function showConfirm() {
         navigator.notification.confirm(
             'GeoLocation', // message
-             onConfirm,            // callback to invoke with index of button pressed
+             onSuccess,            // callback to invoke with index of button pressed
             'Select GeoLocation',           // title
             'Latitude,Longitude'         // buttonLabels
         );
