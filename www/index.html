@@ -12,6 +12,8 @@
     document.addEventListener("deviceready", onDeviceReady, false);
 
     // device APIs are available
+    
+    var lat;
     //
     function onDeviceReady() {
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
@@ -32,6 +34,8 @@
                             'Timestamp: '          + position.timestamp                    + '<br />' +
                             'position: '           + position                              + '<br />' +
                             'buttonIndex: '        + buttonIndex                           + '<br />';
+                            
+                            lat = position.coords.latitude ;
         
         alert('Latitude :'+buttonIndex+'xxx'+ position.coords.latitude);
 
@@ -55,7 +59,7 @@
         {
             //alert('You selected button ' + buttonIndex);
             
-           navigator.notification.alert('message', onError,' [title]', '[buttonName]');
+           navigator.notification.alert(lat, callback,' Latitude', 'OK');
               
 
         }
@@ -68,6 +72,7 @@
         }
         
     }
+    function callback() {}
 
     // Show a custom confirmation dialog
     //
